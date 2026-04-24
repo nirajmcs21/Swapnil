@@ -14,11 +14,17 @@
 
     <nav>
         <div class="logo">SB</div>
-        <ul>
+        <ul id="nav-list">
             <li><a href="index.html">Home</a></li>
-            <li><a href="work.html" class="active">My Work</a></li>
+            <li><a href="work.html">My Work</a></li>
+            <li><a href="index.html">Education</a></li>
+            <li><a href="index.html">Journey</a></li>
+            <li><a href="index.html">Skills</a></li>
             <li><a href="mailto:swapnilbaranwal31@gmail.com" class="btn-contact">Hire Me</a></li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
 
     <header class="work-hero">
@@ -51,8 +57,8 @@
                     <span class="click-hint">Click to reveal details</span>
                 </div>
                 <div class="flip-card-back glass-card">
-                    <h3>SEO,AEO and GEO Mastery</h3>
-                    <p>Information, Interaction and Engagement</p>
+                    <h3>SEO Mastery</h3>
+                    <p>Just 3E: Information, Interaction and Engagement</p>
                     <a href="https://docs.google.com/spreadsheets/d/1fJS9teZ4icOZRZP6mhbg9lScabjVXPzGwhHSg1o1OCo/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer" class="view-btn">Read Samples</a>
                 </div>
             </div>
@@ -123,6 +129,34 @@
     <footer>
         <p>&copy; 2026 Swapnil Baranwal. Let's create something iconic.</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents accidental closing
+            navList.classList.toggle('nav-active');
+            
+            const icon = menuToggle.querySelector('i');
+            // Toggle between Hamburger and X icon
+            if (navList.classList.contains('nav-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking anywhere on the screen
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+                navList.classList.remove('nav-active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
 
 </body>
 </html>
