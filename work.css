@@ -1,0 +1,300 @@
+:root {
+    --bg: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --accent: #38bdf8;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Glow Effect */
+.background-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% -20%, #1e293b, transparent);
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav ul { display: flex; list-style: none; gap: 2rem; }
+nav a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+
+.btn-contact {
+    background: var(--accent);
+    color: var(--bg) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+}
+
+/* Hero Section */
+header {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--text-dim); /* A subtle gray-blue */
+    font-size: 1.8rem; /* Makes the icons prominent */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05); /* Subtle circle background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effect: The "Catchy" Part */
+.social-links a:hover {
+    color: var(--accent); /* Changes to the bright sky blue */
+    transform: translateY(-5px); /* Lift effect */
+    background: rgba(56, 189, 248, 0.1); /* Light blue tint */
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); /* Neon glow */
+}
+
+
+
+
+
+h1 span { color: var(--accent); }
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+main { padding: 0 10%; }
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 4rem 0 2rem;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-pill {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.skill-pill:hover {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Timeline */
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid var(--accent);
+}
+
+.timeline-item ul{
+    padding-left: 18px;
+}
+
+.date {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-dim);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    nav ul { display: none; }
+}
+
+
+
+
+
+
+/* FIX: Header Spacing and Layout */
+.work-hero {
+    min-height: 25vh; /* Reduced from 50vh */
+    display: flex;
+    flex-direction: column; /* Forces P to go under H1 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 10% 1rem;
+}
+
+.work-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    display: block; /* Ensures it takes full width */
+}
+
+.work-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-dim);
+}
+
+/* FLIP CARD LOGIC */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 280px; /* Uniform height */
+    perspective: 1000px; /* Gives 3D depth */
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+.flip-card-inner a
+{
+    color: white;
+}
+
+/* This class is toggled by JavaScript on click */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 0; /* Fixes spacing issues */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: rgba(56, 189, 248, 0.15); /* Slight tint for back side */
+    border: 1px solid var(--accent);
+}
+
+.click-hint {
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.flip-card-back p {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+/* Adjust Grid for tight spacing */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Reduced gap */
+    max-width: 1100px;
+    margin: 0 auto;
+}
